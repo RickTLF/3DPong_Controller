@@ -1,0 +1,182 @@
+
+atmega328BatjesController.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  000000f8  0000016c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000000f8  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .stab         000006cc  00000000  00000000  0000016c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000085  00000000  00000000  00000838  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_aranges 000000a0  00000000  00000000  000008c0  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000408  00000000  00000000  00000960  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000115  00000000  00000000  00000d68  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000002ec  00000000  00000000  00000e7d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000078  00000000  00000000  0000116c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000137  00000000  00000000  000011e4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000018  00000000  00000000  0000131b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   8:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  10:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  14:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  18:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  1c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  20:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  24:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  28:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  2c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  30:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  34:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  38:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  3c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  40:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  44:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  48:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  4c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  50:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  54:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  60:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e8 ef       	ldi	r30, 0xF8	; 248
+  7c:	f0 e0       	ldi	r31, 0x00	; 0
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a0 30       	cpi	r26, 0x00	; 0
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+  8a:	11 e0       	ldi	r17, 0x01	; 1
+  8c:	a0 e0       	ldi	r26, 0x00	; 0
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+  94:	a0 30       	cpi	r26, 0x00	; 0
+  96:	b1 07       	cpc	r27, r17
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	0e 94 53 00 	call	0xa6	; 0xa6 <main>
+  9e:	0c 94 7a 00 	jmp	0xf4	; 0xf4 <_exit>
+
+000000a2 <__bad_interrupt>:
+  a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a6 <main>:
+#include "usart.h"
+//-------------------------------------------------------------------------
+
+int main(void)
+{
+	USART_Init(MYUBRR); 
+  a6:	89 e1       	ldi	r24, 0x19	; 25
+  a8:	90 e0       	ldi	r25, 0x00	; 0
+  aa:	0e 94 61 00 	call	0xc2	; 0xc2 <USART_Init>
+    while(1)
+    {
+		//TODO:: Please write your application code
+		USART_Transmit(USART_Receive());
+  ae:	0e 94 6a 00 	call	0xd4	; 0xd4 <USART_Receive>
+  b2:	0e 94 72 00 	call	0xe4	; 0xe4 <USART_Transmit>
+  b6:	fb cf       	rjmp	.-10     	; 0xae <main+0x8>
+
+000000b8 <setBaudRate>:
+	UCSR0B = (1<<RXEN0)|(1<<TXEN0);		// Enable receiver and transmitter
+	UCSR0C = (3<<UCSZ00);				//Set data format
+}
+
+void setBaudRate(unsigned int ubrr) {
+	UBRR0H = (unsigned char)(ubrr>>8);
+  b8:	90 93 c5 00 	sts	0x00C5, r25
+	UBRR0L = (unsigned char)ubrr;
+  bc:	80 93 c4 00 	sts	0x00C4, r24
+}
+  c0:	08 95       	ret
+
+000000c2 <USART_Init>:
+#include "usart.h"
+//-------------------------------------------------------------------------
+
+// Enable the receiver and transmitter. set frame format: 8data, 1 stop bit
+void USART_Init( unsigned int ubrr) {
+	setBaudRate(ubrr);
+  c2:	0e 94 5c 00 	call	0xb8	; 0xb8 <setBaudRate>
+	UCSR0B = (1<<RXEN0)|(1<<TXEN0);		// Enable receiver and transmitter
+  c6:	88 e1       	ldi	r24, 0x18	; 24
+  c8:	80 93 c1 00 	sts	0x00C1, r24
+	UCSR0C = (3<<UCSZ00);				//Set data format
+  cc:	86 e0       	ldi	r24, 0x06	; 6
+  ce:	80 93 c2 00 	sts	0x00C2, r24
+}
+  d2:	08 95       	ret
+
+000000d4 <USART_Receive>:
+	UBRR0L = (unsigned char)ubrr;
+}
+
+// Wait for data to be received Get and return received data from buffer.
+unsigned char USART_Receive(void) {
+	while (!(UCSR0A & (1<<RXC0)));
+  d4:	e0 ec       	ldi	r30, 0xC0	; 192
+  d6:	f0 e0       	ldi	r31, 0x00	; 0
+  d8:	80 81       	ld	r24, Z
+  da:	88 23       	and	r24, r24
+  dc:	ec f7       	brge	.-6      	; 0xd8 <USART_Receive+0x4>
+	return UDR0;
+  de:	80 91 c6 00 	lds	r24, 0x00C6
+}
+  e2:	08 95       	ret
+
+000000e4 <USART_Transmit>:
+
+// Wait for empty transmit buffer. Put data into buffer, sends the data
+void USART_Transmit(unsigned char data) {
+	while ( !( UCSR0A & (1<<UDRE0)) );
+  e4:	e0 ec       	ldi	r30, 0xC0	; 192
+  e6:	f0 e0       	ldi	r31, 0x00	; 0
+  e8:	90 81       	ld	r25, Z
+  ea:	95 ff       	sbrs	r25, 5
+  ec:	fd cf       	rjmp	.-6      	; 0xe8 <USART_Transmit+0x4>
+	UDR0 = data;
+  ee:	80 93 c6 00 	sts	0x00C6, r24
+  f2:	08 95       	ret
+
+000000f4 <_exit>:
+  f4:	f8 94       	cli
+
+000000f6 <__stop_program>:
+  f6:	ff cf       	rjmp	.-2      	; 0xf6 <__stop_program>
