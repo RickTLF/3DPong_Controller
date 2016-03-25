@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "atmega328BatjesController", "atmega328BatjesController\atmega328BatjesController.cproj", "{C326DFD6-B34B-4FDB-903E-F2ABAC91450D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C326DFD6-B34B-4FDB-903E-F2ABAC91450D}.Debug|AVR.ActiveCfg = Debug|AVR
+		{C326DFD6-B34B-4FDB-903E-F2ABAC91450D}.Debug|AVR.Build.0 = Debug|AVR
+		{C326DFD6-B34B-4FDB-903E-F2ABAC91450D}.Release|AVR.ActiveCfg = Release|AVR
+		{C326DFD6-B34B-4FDB-903E-F2ABAC91450D}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
